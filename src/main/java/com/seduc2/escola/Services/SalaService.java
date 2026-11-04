@@ -17,8 +17,8 @@ public class SalaService {
     public List<Sala> buscarTodos() {
         return repository.findAll();
     }
-    public void criarSala(){
-        Sala sala = new Sala();
+    public void criarSala(Sala s){
+        Sala sala = new Sala( s.getNome(), s.getMesas(), s.getCadeiras(), s.getAlunos());
         repository.save(sala);
     }
 }
